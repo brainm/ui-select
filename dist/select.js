@@ -1533,7 +1533,7 @@ uis.directive('uiSelectMultiple', ['uiSelectMinErr','$timeout', function(uiSelec
           return false;
         }
         var hasDupe = arr.filter( function (origItem) {
-          if ( $select.search.toUpperCase() === undefined || origItem === undefined ) {
+          if ( $select.search.toUpperCase() === undefined || origItem === undefined || typeof origItem !== 'string' ) {
             return false;
           }
           return origItem.toUpperCase() === $select.search.toUpperCase();
